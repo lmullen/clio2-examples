@@ -1,5 +1,9 @@
 library(tidyverse)
 library(historydata)
+# If you don't have historydata then uncomment these lines and run them once
+# install.packages("devtools")
+# devtools::install_github("ropensci/historydata")
+
 data("dijon_prices")
 
 dijon_prices
