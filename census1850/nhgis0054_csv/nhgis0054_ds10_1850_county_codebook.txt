@@ -1,0 +1,411 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0054_ds10_1850_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             1850
+Geographic level: County (by State)
+Dataset:          1850 Census: Population, Agriculture & Other Data [US, States & Counties]
+   NHGIS code:    1850_cPAX
+   NHGIS ID:      ds10
+ 
+Tables:
+ 
+1. Total Population
+   Universe:    Persons
+   Source code: NT1
+   NHGIS code:  ADQ
+ 
+2. Urban Population 2,500 and Over
+   Universe:    Urban Persons (Incorporated Places 2,500 and Over)
+   Source code: NT2
+   NHGIS code:  ADZ
+ 
+3. Population in Cities of 25,000 and Over
+   Universe:    Persons in Cities of 25,000 and Over
+   Source code: NT3
+   NHGIS code:  AD9
+ 
+4. Race/Slave Status by Sex
+   Universe:    Persons
+   Source code: NT5
+   NHGIS code:  AEW
+ 
+5. Race/Slave Status
+   Universe:    Persons
+   Source code: NT6
+   NHGIS code:  AE6
+ 
+6. Births by Slave Status
+   Universe:    Births During the Year Ending June 1, 1850
+   Source code: NT10
+   NHGIS code:  ADR
+ 
+7. Total Births
+   Universe:    Births During the Year Ending June 1, 1850
+   Source code: NT12
+   NHGIS code:  ADS
+ 
+8. Total Persons Married During the Year Ending June 1, 1850.
+   Universe:    Persons Married During the Year Ending June 1, 1850
+   Source code: NT14
+   NHGIS code:  ADU
+ 
+9. Deaths During the Year Ending June 1, 1850 by Slave Status
+   Universe:    Deaths During the Year Ending June 1, 1850
+   Source code: NT15
+   NHGIS code:  ADV
+ 
+10. Total Dwellings of White and Free-Colored Persons
+    Universe:    Dwellings of White and Free-Colored Persons
+    Source code: NT18
+    NHGIS code:  ADX
+ 
+11. Types of Learning Institutions
+    Universe:    Learning Institutions
+    Source code: NT20
+    NHGIS code:  AD0
+ 
+12. Persons at Learning Institutions by Type of Learning Institution
+    Universe:    Teachers and Pupils in Learning Institutions
+    Source code: NT21
+    NHGIS code:  AD1
+ 
+13. White and Free Colored Persons Attending School by Race by Sex
+    Universe:    White and Free Colored Persons Attending School
+    Source code: NT25
+    NHGIS code:  AD4
+ 
+14. Persons Attending School by Race
+    Universe:    Persons Attending School
+    Source code: NT26
+    NHGIS code:  AD5
+ 
+15. Persons Attending School by Nativity
+    Universe:    Persons Attending School
+    Source code: NT27
+    NHGIS code:  AD6
+ 
+16. Nativity
+    Universe:    Persons
+    Source code: NT40
+    NHGIS code:  AEM
+ 
+17. Churches by Denomination
+    Universe:    Churches
+    Source code: NT47
+    NHGIS code:  AET
+ 
+18. Sex by Age
+    Universe:    Persons
+    Source code: NT53
+    NHGIS code:  AE0
+ 
+19. Sex
+    Universe:    Persons
+    Source code: NT54
+    NHGIS code:  AE1
+ 
+20. Age
+    Universe:    Persons
+    Source code: NT55
+    NHGIS code:  AE2
+ 
+21. Water Transport
+    Universe:    Specified Geographic Area
+    Source code: NT57
+    NHGIS code:  AE4
+ 
+22. Rail Transport
+    Universe:    Specified Geographic Area
+    Source code: NT58
+    NHGIS code:  AE5
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+    GISJOIN:     GIS Join Match Code
+    YEAR:        Data File Year
+    STATE:       State Name
+    STATEA:      State Code
+    COUNTY:      County Name
+    COUNTYA:     County Code
+    AREANAME:    Area name
+ 
+Table 1:     Total Population
+Universe:    Persons
+Source code: NT1
+NHGIS code:  ADQ
+    ADQ001:      Total
+ 
+Table 2:     Urban Population 2,500 and Over
+Universe:    Urban Persons (Incorporated Places 2,500 and Over)
+Source code: NT2
+NHGIS code:  ADZ
+    ADZ001:      Total
+ 
+Table 3:     Population in Cities of 25,000 and Over
+Universe:    Persons in Cities of 25,000 and Over
+Source code: NT3
+NHGIS code:  AD9
+    AD9001:      Total
+ 
+Table 4:     Race/Slave Status by Sex
+Universe:    Persons
+Source code: NT5
+NHGIS code:  AEW
+    AEW001:      White >> Male
+    AEW002:      White >> Female
+    AEW003:      Nonwhite: Free >> Male
+    AEW004:      Nonwhite: Free >> Female
+    AEW005:      Nonwhite: Slave >> Male
+    AEW006:      Nonwhite: Slave >> Female
+ 
+Table 5:     Race/Slave Status
+Universe:    Persons
+Source code: NT6
+NHGIS code:  AE6
+    AE6001:      White
+    AE6002:      Nonwhite: Free
+    AE6003:      Nonwhite: Slave
+ 
+Table 6:     Births by Slave Status
+Universe:    Births During the Year Ending June 1, 1850
+Source code: NT10
+NHGIS code:  ADR
+    ADR001:      White and free colored
+    ADR002:      Slave
+ 
+Table 7:     Total Births
+Universe:    Births During the Year Ending June 1, 1850
+Source code: NT12
+NHGIS code:  ADS
+    ADS001:      Total
+ 
+Table 8:     Total Persons Married During the Year Ending June 1, 1850.
+Universe:    Persons Married During the Year Ending June 1, 1850
+Source code: NT14
+NHGIS code:  ADU
+    ADU001:      Total
+ 
+Table 9:     Deaths During the Year Ending June 1, 1850 by Slave Status
+Universe:    Deaths During the Year Ending June 1, 1850
+Source code: NT15
+NHGIS code:  ADV
+    ADV001:      White and free colored
+    ADV002:      Slave
+ 
+Table 10:    Total Dwellings of White and Free-Colored Persons
+Universe:    Dwellings of White and Free-Colored Persons
+Source code: NT18
+NHGIS code:  ADX
+    ADX001:      Total
+ 
+Table 11:    Types of Learning Institutions
+Universe:    Learning Institutions
+Source code: NT20
+NHGIS code:  AD0
+    AD0001:      Colleges
+    AD0002:      Public schools
+    AD0003:      Academies and other schools
+ 
+Table 12:    Persons at Learning Institutions by Type of Learning Institution
+Universe:    Teachers and Pupils in Learning Institutions
+Source code: NT21
+NHGIS code:  AD1
+    AD1001:      Teachers >> Colleges
+    AD1002:      Teachers >> Public schools
+    AD1003:      Teachers >> Academies and other schools
+    AD1004:      Pupils >> Colleges
+    AD1005:      Pupils >> Public schools
+    AD1006:      Pupils >> Academies and other schools
+ 
+Table 13:    White and Free Colored Persons Attending School by Race by Sex
+Universe:    White and Free Colored Persons Attending School
+Source code: NT25
+NHGIS code:  AD4
+    AD4001:      White >> Male
+    AD4002:      White >> Female
+    AD4003:      Free Colored >> Male
+    AD4004:      Free Colored >> Female
+ 
+Table 14:    Persons Attending School by Race
+Universe:    Persons Attending School
+Source code: NT26
+NHGIS code:  AD5
+    AD5001:      White
+    AD5002:      Free Colored
+ 
+Table 15:    Persons Attending School by Nativity
+Universe:    Persons Attending School
+Source code: NT27
+NHGIS code:  AD6
+    AD6001:      Native
+    AD6002:      Foreign born
+ 
+Table 16:    Nativity
+Universe:    Persons
+Source code: NT40
+NHGIS code:  AEM
+    AEM001:      Born out of state but in U.S.
+    AEM002:      Born out of the country
+ 
+Table 17:    Churches by Denomination
+Universe:    Churches
+Source code: NT47
+NHGIS code:  AET
+    AET001:      Baptist
+    AET002:      Christian
+    AET003:      Congregational
+    AET004:      Congregational-Orthodox
+    AET005:      Dutch Reformed
+    AET006:      Episcopal
+    AET007:      Free Churches
+    AET008:      Friends or Quaker
+    AET009:      German Reformed
+    AET010:      Jewish
+    AET011:      Lutheran
+    AET012:      Mennonite
+    AET013:      Methodist
+    AET014:      Moravian
+    AET015:      Presbyterian
+    AET016:      Protestant
+    AET017:      Roman Catholic
+    AET018:      Swedenborgian
+    AET019:      Tunker
+    AET020:      Union
+    AET021:      Unitarian
+    AET022:      Universalist
+    AET023:      Minor Sects
+ 
+Table 18:    Sex by Age
+Universe:    Persons
+Source code: NT53
+NHGIS code:  AE0
+    AE0001:      Male >> Under 1 year of age
+    AE0002:      Male >> 1 to 4 years of age
+    AE0003:      Male >> 5 to 9 years of age
+    AE0004:      Male >> 10 to 14 years of age
+    AE0005:      Male >> 15 to 19 years of age
+    AE0006:      Male >> 20 to 29 years of age
+    AE0007:      Male >> 30 to 39 years of age
+    AE0008:      Male >> 40 to 49 years of age
+    AE0009:      Male >> 50 to 59 years of age
+    AE0010:      Male >> 60 to 69 years of age
+    AE0011:      Male >> 70 to 79 years of age
+    AE0012:      Male >> 80 to 89 years of age
+    AE0013:      Male >> 90 to 99 years of age
+    AE0014:      Male >> 100 years of age and over
+    AE0015:      Male >> Age unknown
+    AE0016:      Female >> Under 1 year of age
+    AE0017:      Female >> 1 to 4 years of age
+    AE0018:      Female >> 5 to 9 years of age
+    AE0019:      Female >> 10 to 14 years of age
+    AE0020:      Female >> 15 to 19 years of age
+    AE0021:      Female >> 20 to 29 years of age
+    AE0022:      Female >> 30 to 39 years of age
+    AE0023:      Female >> 40 to 49 years of age
+    AE0024:      Female >> 50 to 59 years of age
+    AE0025:      Female >> 60 to 69 years of age
+    AE0026:      Female >> 70 to 79 years of age
+    AE0027:      Female >> 80 to 89 years of age
+    AE0028:      Female >> 90 to 99 years of age
+    AE0029:      Female >> 100 years of age and over
+    AE0030:      Female >> Age unknown
+ 
+Table 19:    Sex
+Universe:    Persons
+Source code: NT54
+NHGIS code:  AE1
+    AE1001:      Male
+    AE1002:      Female
+ 
+Table 20:    Age
+Universe:    Persons
+Source code: NT55
+NHGIS code:  AE2
+    AE2001:      Under 1 year of age
+    AE2002:      1 to 4 years of age
+    AE2003:      5 to 9 years of age
+    AE2004:      10 to 14 years of age
+    AE2005:      15 to 19 years of age
+    AE2006:      20 to 29 years of age
+    AE2007:      30 to 39 years of age
+    AE2008:      40 to 49 years of age
+    AE2009:      50 to 59 years of age
+    AE2010:      60 to 69 years of age
+    AE2011:      70 to 79 years of age
+    AE2012:      80 to 89 years of age
+    AE2013:      90 to 99 years of age
+    AE2014:      100 years of age and over
+    AE2015:      Age unknown
+ 
+Table 21:    Water Transport
+Universe:    Specified Geographic Area
+Source code: NT57
+NHGIS code:  AE4
+    AE4001:      Water transport
+ 
+Table 22:    Rail Transport
+Universe:    Specified Geographic Area
+Source code: NT58
+NHGIS code:  AE5
+    AE5001:      Rail transport
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu
