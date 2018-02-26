@@ -1,0 +1,104 @@
+---
+title: "Exploratory Data Analysis"
+output: html_notebook
+---
+
+## Setup
+
+This notebook will be used to explore data from the 1850 U.S. Census. This data taken from the [NHGIS](https://www.nhgis.org/).
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(skimr)
+census <- read_csv("census_1850_data.csv")
+codebook <- read_csv("census_1850_codebook.csv")
+```
+
+The data frame `census` contains the data. The data frame `codebook` explains more about the column names.
+
+## Summary or skim
+
+We can use `summary()` or `skim()` to get a sense of the data in any column.
+
+```{r}
+summary(census$population_total)
+skim(census$population_total)
+```
+
+This also works on whole data frames, but it is best to do this with a limited selection of columns.
+
+```{r}
+census %>% 
+  select(starts_with("crops_")) %>%
+  skim()
+```
+
+## Aggregating by state
+
+We will be better off in some instances getting aggregates by states. We can do this for a single column.
+
+```{r}
+census %>% 
+  group_by(STATE) %>% 
+  summarize(crops_rice = sum(crops_rice, na.rm = TRUE)) %>% 
+  arrange(desc(crops_rice))
+```
+
+But if we want to do this for a **bunch** of columns, we will be better off with `summarize_at()`.
+
+```{r}
+census %>% 
+  group_by(STATE) %>% 
+  summarize_at(vars(starts_with("crops_")), sum, na.rm = TRUE) 
+```
+
+Sometimes it is more illuminating to have a rank than a figure.
+
+```{r}
+census %>% 
+  group_by(STATE) %>% 
+  summarize_at(vars(starts_with("crops_")), sum, na.rm = TRUE) %>% 
+  mutate_at(vars(starts_with("crops_")),
+            funs(dense_rank(desc(.))))
+```
+
+## Single-variate distributions
+
+For a categorical variable we can get a sense of the distribution using a bar plot.
+
+```{r}
+ggplot(census, aes(x = STATE)) +
+  geom_bar() +
+  coord_flip()
+```
+
+For a numeric variable we can get the distribution using a histogram. Often you want to zoom in on the x-axis.
+
+```{r}
+ggplot(census, aes(x = population_total)) +
+  geom_histogram(binwidth = 1000) + 
+  coord_cartesian(xlim = c(0, 50e3))
+```
+
+Often times you want to adjust for either geography or population. In other words, crops per person or crops per square kilometer.
+
+```{r}
+ggplot(census, aes(x = population_total / area_sq_km)) +
+  geom_histogram(binwidth = 5) +
+  coord_cartesian(xlim = c(0, 200))
+```
+
+## Bi-variate correlation
+
+You can compare two numeric variables with `geom_point()` (or `geom_jitter()`, `geom_count()`, or `geom_hex()`).
+
+```{r}
+ggplot(census,
+       aes(x = population_white_free, 
+           y = population_nonwhite_slave)) +
+  geom_jitter(shape = 1) 
+```
+
+## Exploratory Data Analysis
+
+Explore a variety of variables, using both single-variate distributions and bi-variate correlations.
