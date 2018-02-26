@@ -1,0 +1,153 @@
+code,col_name,category,meaning
+ADF001,farms_total,Total number of farms,Total
+ADI001,farms_land_improved,Improved/Unimproved land in farms,Improved
+ADI002,farms_land_unimproved,Improved/Unimproved land in farms,Unimproved
+ADJ001,farms_value_farms,"Value of Farms, Implements and Machinery",Farms
+ADJ002,farms_value_tools,"Value of Farms, Implements and Machinery",Implements and machinery
+ADK001,livestock_horses,Livestock,Horses
+ADK002,livestock_mules,Livestock,Asses and mules
+ADK003,livestock_milk_cows,Livestock,Milch cows
+ADK004,livestock_oxen,Livestock,Working oxen
+ADK005,livestock_other_cattle,Livestock,Other cattle
+ADK006,livestock_sheep,Livestock,Sheep
+ADK007,livestock_pigs,Livestock,Pigs
+ADM001,crops_wheat,Farm Productions,Cereal grains: Wheat (bushels)
+ADM002,crops_rye,Farm Productions,Cereal grains: Rye (bushels)
+ADM003,crops_indian_corn,Farm Productions,Cereal grains: Indian corn (bushels)
+ADM004,crops_oats,Farm Productions,Cereal grains: Oats (bushels)
+ADM005,crops_rice,Farm Productions,Various crops: Rice (pounds)
+ADM006,crops_tobacco,Farm Productions,Various crops: Tobacco (pounds)
+ADM007,crops_ginned_cotton,Farm Productions,Various crops: Ginned cotton (400-pound bales)
+ADM008,crops_wool,Farm Productions,Various crops: Wool (pounds)
+ADM009,crops_peas_beans,Farm Productions,Various crops: Peas and beans (bushels)
+ADM010,crops_irish_potatoes,Farm Productions,Various crops: Irish potatoes (bushels)
+ADM011,crops_sweet_potatoes,Farm Productions,Various crops: Sweet potatoes (bushels)
+ADM012,crops_barley,Farm Productions,Various crops: Barley (bushels)
+ADM013,crops_buckwheat,Farm Productions,Various crops: Buckwheat (bushels)
+ADM014,crops_wine,Farm Productions,"Flax, silk, sugar, etc.: Wine (gallons)"
+ADM015,crops_butter,Farm Productions,"Flax, silk, sugar, etc.: Butter (pounds)"
+ADM016,crops_cheese,Farm Productions,"Flax, silk, sugar, etc.: Cheese (pounds)"
+ADM017,crops_hay,Farm Productions,"Flax, silk, sugar, etc.: Hay (tons)"
+ADM018,crops_clover_seed,Farm Productions,"Flax, silk, sugar, etc.: Clover seed (bushels)"
+ADM019,crops_grass_seed,Farm Productions,"Flax, silk, sugar, etc.: Grass seed (bushels)"
+ADM020,crops_hops,Farm Productions,"Flax, silk, sugar, etc.: Hops (pounds)"
+ADM021,crops_dew_hemp,Farm Productions,"Flax, silk, sugar, etc.: Dew-rotted hemp (tons)"
+ADM022,crops_water_hemp,Farm Productions,"Flax, silk, sugar, etc.: Water-rotted hemp (tons)"
+ADM023,crops_flax,Farm Productions,"Flax, silk, sugar, etc.: Flax (pounds)"
+ADM024,crops_flaxseed,Farm Productions,"Flax, silk, sugar, etc.: Flaxseed (bushels)"
+ADM025,crops_silk_cocoon,Farm Productions,"Flax, silk, sugar, etc.: Silk cocoon (pounds)"
+ADM026,crops_maple_sugar,Farm Productions,"Flax, silk, sugar, etc.: Maple sugar (pounds)"
+ADM027,crops_cane_sugar,Farm Productions,"Flax, silk, sugar, etc.: Cane sugar (1000-pound hogsheads)"
+ADM028,crops_maple_molasses,Farm Productions,"Flax, silk, sugar, etc.: Maple molasses (gallons)"
+ADM029,crops_cane_molasses,Farm Productions,"Flax, silk, sugar, etc.: Cane molasses (gallons)"
+ADM030,crops_beeswax_honey,Farm Productions,"Flax, silk, sugar, etc.: Beeswax and Honey(pounds)"
+ADQ001,population_total,Total population,Total
+ADZ001,population_urban_over_2500,"Urban Population 2,500 and Over",Total
+AD9001,population_urban_over_25000,"Population in Cities of 25,000 and Over",Total
+AEW001,population_white_free_male,Race/Slave Status by Sex,White >> Male
+AEW002,population_white_free_female,Race/Slave Status by Sex,White >> Female
+AEW003,population_nonwhite_free_male,Race/Slave Status by Sex,Nonwhite: Free >> Male
+AEW004,population_nonwhite_free_female,Race/Slave Status by Sex,Nonwhite: Free >> Female
+AEW005,population_nonwhite_slave_male,Race/Slave Status by Sex,Nonwhite: Slave >> Male
+AEW006,population_nonwhite_slave_female,Race/Slave Status by Sex,Nonwhite: Slave >> Female
+AE6001,population_white_free,Race/Slave Status,White
+AE6002,population_nonwhite_free,Race/Slave Status,Nonwhite: Free
+AE6003,population_nonwhite_slave,Race/Slave Status,Nonwhite: Slave
+ADR001,births_free,Births by Slave Status,White and free colored
+ADR002,births_slave,Births by Slave Status,Slave
+ADS001,births_total,Total Births,Total
+ADU001,marriages_total,"Total Persons Married During the Year Ending June 1, 1850",Total
+ADV001,deaths_free,"Deaths During the Year Ending June 1, 1850 by Slave Status",White and free colored
+ADV002,deaths_slave,"Deaths During the Year Ending June 1, 1850 by Slave Status",Slave
+ADX001,dwellings_total,Total Dwellings of White and Free-Colored Persons,Total
+AD0001,learning_colleges,Types of Learning Institutions,Colleges
+AD0002,learning_public_schools,Types of Learning Institutions,Public schools
+AD0003,learning_academies_other,Types of Learning Institutions,Academies and other schools
+AD1001,learning_teachers_college,Persons at Learning Institutions by Type of Learning Institution,Teachers >> Colleges
+AD1002,learning_teachers_public_schools,Persons at Learning Institutions by Type of Learning Institution,Teachers >> Public schools
+AD1003,learning_teachers_academies_others,Persons at Learning Institutions by Type of Learning Institution,Teachers >> Academies and other schools
+AD1004,learning_pupils_colleges,Persons at Learning Institutions by Type of Learning Institution,Pupils >> Colleges
+AD1005,learning_pupils_public_schools,Persons at Learning Institutions by Type of Learning Institution,Pupils >> Public schools
+AD1006,learning_pupils_academies_other,Persons at Learning Institutions by Type of Learning Institution,Pupils >> Academies and other schools
+AD4001,students_free_white_male,White and Free Colored Persons Attending School by Race by Sex,White >> Male
+AD4002,students_free_white_female,White and Free Colored Persons Attending School by Race by Sex,White >> Female
+AD4003,students_free_colored_male,White and Free Colored Persons Attending School by Race by Sex,Free Colored >> Male
+AD4004,students_free_colored_female,White and Free Colored Persons Attending School by Race by Sex,Free Colored >> Female
+AD5001,students_free_white,Persons Attending School by Race,White
+AD5002,students_free_colored,Persons Attending School by Race,Free Colored
+AD6001,students_native,Persons Attending School by Nativity,Native
+AD6002,students_foreign_born,Persons Attending School by Nativity,Foreign born
+AEM001,nativity_born_out_of_state,Nativity,Born out of state but in U.S.
+AEM002,nativity_born_out_of_country,Nativity,Born out of the country
+AET001,churches_baptist,Churches by Denomination,Baptist
+AET002,churches_christian,Churches by Denomination,Christian
+AET003,churches_congregational,Churches by Denomination,Congregational
+AET004,churches_congregational_orthodox,Churches by Denomination,Congregational-Orthodox
+AET005,churches_dutch_reformed,Churches by Denomination,Dutch Reformed
+AET006,churches_episcopal,Churches by Denomination,Episcopal
+AET007,churches_free,Churches by Denomination,Free Churches
+AET008,churches_quakers,Churches by Denomination,Friends or Quaker
+AET009,churches_german_reformed,Churches by Denomination,German Reformed
+AET010,churches_jewish,Churches by Denomination,Jewish
+AET011,churches_lutheran,Churches by Denomination,Lutheran
+AET012,churches_mennonite,Churches by Denomination,Mennonite
+AET013,churches_methodist,Churches by Denomination,Methodist
+AET014,churches_churches_moravian,Churches by Denomination,Moravian
+AET015,churches_presbyterian,Churches by Denomination,Presbyterian
+AET016,churches_protestant,Churches by Denomination,Protestant
+AET017,churches_roman_catholic,Churches by Denomination,Roman Catholic
+AET018,churches_swedenborgian,Churches by Denomination,Swedenborgian
+AET019,churches_tunker,Churches by Denomination,Tunker
+AET020,churches_union,Churches by Denomination,Union
+AET021,churches_unitarian,Churches by Denomination,Unitarian
+AET022,churches_universalist,Churches by Denomination,Universalist
+AET023,churches_minor_sects,Churches by Denomination,Minor Sects
+AE0001,sexage_male_00_to_01,Sex by Age,Male >> Under 1 year of age
+AE0002,sexage_male_01_to_04,Sex by Age,Male >> 1 to 4 years of age
+AE0003,sexage_male_05_to_09,Sex by Age,Male >> 5 to 9 years of age
+AE0004,sexage_male_10_to_14,Sex by Age,Male >> 10 to 14 years of age
+AE0005,sexage_male_15_to_19,Sex by Age,Male >> 15 to 19 years of age
+AE0006,sexage_male_20_to_29,Sex by Age,Male >> 20 to 29 years of age
+AE0007,sexage_male_30_to_39,Sex by Age,Male >> 30 to 39 years of age
+AE0008,sexage_male_40_to_49,Sex by Age,Male >> 40 to 49 years of age
+AE0009,sexage_male_50_to_59,Sex by Age,Male >> 50 to 59 years of age
+AE0010,sexage_male_60_to_69,Sex by Age,Male >> 60 to 69 years of age
+AE0011,sexage_male_70_to_79,Sex by Age,Male >> 70 to 79 years of age
+AE0012,sexage_male_80_to_89,Sex by Age,Male >> 80 to 89 years of age
+AE0013,sexage_male_90_to_99,Sex by Age,Male >> 90 to 99 years of age
+AE0014,sexage_male_over_100,Sex by Age,Male >> 100 years of age and over
+AE0015,sexage_male_unknown,Sex by Age,Male >> Age unknown
+AE0016,sexage_female_00_to_01,Sex by Age,Female >> Under 1 year of age
+AE0017,sexage_female_01_to_04,Sex by Age,Female >> 1 to 4 years of age
+AE0018,sexage_female_05_to_09,Sex by Age,Female >> 5 to 9 years of age
+AE0019,sexage_female_10_to_14,Sex by Age,Female >> 10 to 14 years of age
+AE0020,sexage_female_15_to_19,Sex by Age,Female >> 15 to 19 years of age
+AE0021,sexage_female_20_to_29,Sex by Age,Female >> 20 to 29 years of age
+AE0022,sexage_female_30_to_39,Sex by Age,Female >> 30 to 39 years of age
+AE0023,sexage_female_40_to_49,Sex by Age,Female >> 40 to 49 years of age
+AE0024,sexage_female_50_to_59,Sex by Age,Female >> 50 to 59 years of age
+AE0025,sexage_female_60_to_69,Sex by Age,Female >> 60 to 69 years of age
+AE0026,sexage_female_70_to_79,Sex by Age,Female >> 70 to 79 years of age
+AE0027,sexage_female_80_to_89,Sex by Age,Female >> 80 to 89 years of age
+AE0028,sexage_female_90_to_99,Sex by Age,Female >> 90 to 99 years of age
+AE0029,sexage_female_over_100,Sex by Age,Female >> 100 years of age and over
+AE0030,sexage_female_unknown,Sex by Age,Female >> Age unknown
+AE1001,sex_male,Sex,Male
+AE1002,sex_female,Sex,Female
+AE2001,age_00_to_01,Age,Under 1 year of age
+AE2002,age_01_to_04,Age,1 to 4 years of age
+AE2003,age_05_to_09,Age,5 to 9 years of age
+AE2004,age_10_to_14,Age,10 to 14 years of age
+AE2005,age_15_to_19,Age,15 to 19 years of age
+AE2006,age_20_to_29,Age,20 to 29 years of age
+AE2007,age_30_to_39,Age,30 to 39 years of age
+AE2008,age_40_to_49,Age,40 to 49 years of age
+AE2009,age_50_to_59,Age,50 to 59 years of age
+AE2010,age_60_to_69,Age,60 to 69 years of age
+AE2011,age_70_to_79,Age,70 to 79 years of age
+AE2012,age_80_to_89,Age,80 to 89 years of age
+AE2013,age_90_to_99,Age,90 to 99 years of age
+AE2014,age_over_100,Age,100 years of age and over
+AE2015,age_unknown,Age,Age unknown
+AE4001,transport_water,Water Transport,Water transport
+AE5001,transport_rail,Rail Transport,Rail transport
