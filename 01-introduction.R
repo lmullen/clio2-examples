@@ -10,11 +10,11 @@ print(a)
 library(tidyverse)
 
 # Installing a package from CRAN
-install.packages("devtools")
-library(devtools)
+install.packages("remotes")
+library(remotes)
 
 # Installing a package from GitHub
-devtools::install_github("ropensci/historydata")
+remotes::install_github("ropensci/historydata")
 library(historydata)
 
 # Getting help
@@ -27,18 +27,32 @@ presbyterians
 View(presbyterians)
 
 # Another summary view of a data frame
-glimpse(presbyerians)
+glimpse(presbyterians)
 
 # Making a simple plot
 ggplot(presbyterians, aes(x = year, y = members, color = denomination)) +
   geom_point() +
-  geom_line() + 
+  geom_line() +
   labs(title = "Presbyterian membership over time")
 
 # Can you modify the plot so it shows churches rather than members?
 
-# Can you modify the plot so that it shows the number of members per church?
 
-# There is another dataset called `us_national_population`. Can you plot it over time?
+# Let's try another dataset
+View(dijon_prices)
 
-# Harder: There is another dataset called `us_state_populations`. Can you plot them over time?
+# What commodities are in the dataset?
+unique(dijon_prices$commodity)
+
+# That's a lot of commodities. Let's try just one.
+wheat <- dijon_prices %>%
+  filter(commodity == "best wheat")
+
+View(wheat)
+
+ggplot(wheat, aes(x = year, y = price)) +
+  geom_line() + geom_point() +
+  labs(title = "Prices for best wheat in Dijon")
+
+# Can you modify the plot to be a different commodity?
+
