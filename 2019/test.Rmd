@@ -1,0 +1,24 @@
+---
+title: "Test"
+author: "Lincoln Mullen"
+date: "February 27, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, fig.width=10}
+library(tidyverse)
+library(historydata)
+theme_set(theme_bw())
+g <- ggplot(early_colleges, aes(state, sponsorship))
+g + geom_count(col="tomato3", show.legend=F) +
+  labs(subtitle="Early Colleges", 
+       y="State", 
+       x="Sponsorship", 
+       title="State Colleges Per Congregational Establishment")
+```
+

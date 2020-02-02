@@ -1,0 +1,133 @@
+---
+title: "Judges Example"
+---
+
+```{r}
+library(tidyverse )
+# install.packages("igraph")
+library(igraph)
+# install.packages("ggraph")
+library(ggraph) 
+# install.packages("stringr")
+library(stringr)
+# install.packages("forcats")
+library(forcats)
+# install.packages("lubridate")
+library(lubridate)
+# devtools::install_github("ropensci/historydata")
+library(historydata)
+```
+
+Get the data frames from the judges table.
+
+```{r}
+data("judges_people")
+data("judges_appointments")
+judges_people
+judges_appointments
+```
+
+We are going to remove judge labels from court names, so that the court names are consistent. We are also going to parse the commission date.
+
+```{r}
+judges_cleaned_up <- judges_appointments %>% 
+  mutate(court_name = court_name %>% 
+           str_replace_all("Associate Judge, ", "") %>% 
+           str_replace_all("Chief Judge, ", "") %>% 
+           str_replace_all(", Chief Judge", "") %>% 
+           str_replace_all(", Chief Justice", "")) %>% 
+  mutate(commission_date = mdy(commission_date),
+         commission_year = year(commission_date)) %>% 
+  mutate(president_party = fct_other(president_party,
+                                     keep = c("Democratic", "Federalists",
+                                              "Jeffersonian Republican",
+                                              "Republican", "Whig")))
+
+early_appt <- judges_cleaned_up %>% 
+  filter(commission_year <= 1920)
+```
+
+Let's create an edge list. The most important thing is that our edges be the first two columns.
+
+```{r}
+appt_edges <- early_appt %>% 
+  left_join(judges_people, by = "judge_id") %>% 
+  select(judge_id, court_name, president_party)
+```
+
+```{r}
+appt_g <- graph_from_data_frame(appt_edges, directed = FALSE)
+plot(appt_g, vertex.label = NA, vertex.size = 1)
+```
+
+Let's do the plot a better way:
+
+```{r}
+ggraph(appt_g, layout = "igraph", algorithm = "nicely") +
+  geom_edge_fan() +
+  geom_node_point() +
+  labs(title = "Judges and Courts") +
+  theme_graph()
+```
+  
+We can improve this plot by cleaning up changing the colors, for instance.
+
+```{r}
+ggraph(appt_g, layout = "igraph", algorithm = "nicely") +
+  geom_edge_fan(aes(color = president_party)) +
+  geom_node_point() +
+  labs(title = "Judges and Courts") +
+  theme_graph()
+```
+
+No matter what we do the plot will be tricky because it has both courts and judges in it. So let's project the graph into a single kind of node.
+
+```{r}
+type_of_node <- bipartite_mapping(appt_g)
+V(appt_g)$type <- type_of_node$type
+bi_g <- bipartite_projection(appt_g)
+judges_g <- bi_g[[1]]
+courts_g <- bi_g[[2]]
+```
+
+We can get the graph data frames back from the `courts_g`, and do a join back to the appointments table to get the data about the courts.
+
+```{r}
+courts_info <- judges_appointments %>% 
+  select(court_name, court_type) %>% 
+  distinct()
+courts_g_edges <- as_data_frame(courts_g, "edges") 
+courts_g_nodes <- as_data_frame(courts_g, "vertices") %>% 
+  left_join(courts_info, by = c("name" = "court_name"))
+```
+
+Then we can make a new graph. Notice that this time we pass in both an edges list and a node list.
+
+```{r}
+courts_g2 <- graph_from_data_frame(courts_g_edges, directed = TRUE, 
+                                   vertices = courts_g_nodes)
+```
+
+And now we can plot the relationship between courts.
+
+```{r}
+ggraph(courts_g2, "igraph", algorithm = "nicely") +
+  geom_edge_fan() + 
+  geom_node_point(aes(color = court_type))
+```
+
+Finally, we can pull out the sub-graph connected to the Supreme Court.
+
+```{r}
+induced_subgraph(courts_g2, 4) %>% plot()
+```
+
+We can query the graph for various information about its structure without plotting it:
+
+```{r}
+articulation_points(courts_g2)
+assortativity_degree(courts_g2)
+betweenness(courts_g2) %>% sort(decreasing = TRUE) %>% head(5)
+closeness(courts_g2) %>% sort(decreasing = TRUE) %>% head(5)
+```
+
