@@ -4,6 +4,14 @@
 library(tidyverse)
 library(historydata)
 
+# First an excursus about the pipe %>%, which lets us write function calls like g(f(x)), which are read from inside out,
+# as calls like x %>% f() %>% g(), which are read from left to right.
+num <- 1:10
+mean(num)
+round(mean(num))
+num %>% mean()
+num %>% mean() %>% round()
+
 # dplyr gives us verbs to deal with data. Here is the data we are going to use.
 data("paulist_missions")
 paulist_missions
