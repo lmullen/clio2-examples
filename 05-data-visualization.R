@@ -1,6 +1,9 @@
 library(tidyverse) # loads dplyr and ggplot2
 library(historydata)
+library(RColorBrewer)
+library(ggthemes)
 data("methodists")
+methodists <- as_tibble(methodists)
 methodists
 
 # Scatter plots: quantitative vs quantitative
@@ -33,12 +36,12 @@ ggplot(va, aes(x = members_white, y = members_black, color = district)) +
        title = "Virginia Methodists, 1800-1810",
        subtitle = "Membership totals by race, showing disparities in membership",
        color = "District",
-       caption = "Clio 2, spring 2018") +
+       caption = "Clio 2, spring 2020") +
   scale_x_continuous(breaks = seq(0, 1200, by = 100)) +
   scale_y_continuous(breaks = seq(0, 600, by = 100))
 
 
-# Bar plots and histograms
+# Bar plots and histograms (counts and distributions)
 
 ## geom_bar does counts
 methodists_1820 <- methodists %>%
@@ -82,3 +85,34 @@ ggplot(by_year, aes(x = year, y = members_total)) +
   facet_wrap(~conference, ncol = 4, scales = "free_y")
 
 # Try a plot with the percentage of black members
+
+
+# An example of making a presentation ready graphic
+# ---------------------------------------------------------
+us_state_populations <- us_state_populations %>%
+  mutate(territory = str_detect(state, "Territory"))
+
+ggplot(us_state_populations,
+       aes(x = year, y = population, color = territory)) +
+  geom_line(aes(group = state), alpha = 0.8) +
+  scale_x_continuous(breaks = seq(1800, 2000, by = 25)) +
+  scale_y_log10(breaks = scales::log_breaks(n = 9),
+                labels = scales::comma) +
+  scale_color_brewer(type = "qual",
+                     name = NULL,
+                     labels = c("State", "Territory")) +
+  geom_smooth(se = FALSE, color = "red") +
+  labs(title = "U.S. state populations",
+       subtitle = "Some are big and some are small. They all get bigger and seldom shrink, if ever.",
+       x = NULL,
+       y = "Population",
+       caption = "Source: NHGIS") +
+  annotate(geom = "text", x = 1880, y = 10000,
+           label = "Territories are represented separately",
+           hjust = 0) +
+  annotate(geom = "text", x = 1980, y = 30e6,
+           label = "California is a juggernaut",
+           hjust = 1) +
+  annotation_logticks() +
+  theme_bw() +
+  theme(legend.position = "bottom")
