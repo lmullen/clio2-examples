@@ -4,18 +4,13 @@ title: "Judges Example"
 
 ```{r}
 library(tidyverse )
-# install.packages("igraph")
 library(igraph)
-# install.packages("ggraph")
 library(ggraph) 
-# install.packages("stringr")
 library(stringr)
-# install.packages("forcats")
 library(forcats)
-# install.packages("lubridate")
 library(lubridate)
-# devtools::install_github("ropensci/historydata")
 library(historydata)
+library(tidygraph)
 ```
 
 Get the data frames from the judges table.
@@ -56,7 +51,8 @@ appt_edges <- early_appt %>%
 ```
 
 ```{r}
-appt_g <- graph_from_data_frame(appt_edges, directed = FALSE)
+appt_g <- graph_from_data_frame(appt_edges, directed = FALSE) %>% as_tbl_graph()
+appt_g
 plot(appt_g, vertex.label = NA, vertex.size = 1)
 ```
 
@@ -90,14 +86,22 @@ judges_g <- bi_g[[1]]
 courts_g <- bi_g[[2]]
 ```
 
+Let's check in on our courts.
+
+```{r}
+courts_g <- courts_g %>% as_tbl_graph()
+courts_g
+```
+
+
 We can get the graph data frames back from the `courts_g`, and do a join back to the appointments table to get the data about the courts.
 
 ```{r}
 courts_info <- judges_appointments %>% 
   select(court_name, court_type) %>% 
   distinct()
-courts_g_edges <- as_data_frame(courts_g, "edges") 
-courts_g_nodes <- as_data_frame(courts_g, "vertices") %>% 
+courts_g_edges <- igraph::as_data_frame(courts_g, "edges") 
+courts_g_nodes <- igraph::as_data_frame(courts_g, "vertices") %>% 
   left_join(courts_info, by = c("name" = "court_name"))
 ```
 
@@ -105,7 +109,8 @@ Then we can make a new graph. Notice that this time we pass in both an edges lis
 
 ```{r}
 courts_g2 <- graph_from_data_frame(courts_g_edges, directed = TRUE, 
-                                   vertices = courts_g_nodes)
+                                   vertices = courts_g_nodes) %>% 
+  as_tbl_graph()
 ```
 
 And now we can plot the relationship between courts.
@@ -119,7 +124,7 @@ ggraph(courts_g2, "igraph", algorithm = "nicely") +
 Finally, we can pull out the sub-graph connected to the Supreme Court.
 
 ```{r}
-induced_subgraph(courts_g2, 4) %>% plot()
+induced_subgraph(courts_g2, 14) %>% plot()
 ```
 
 We can query the graph for various information about its structure without plotting it:

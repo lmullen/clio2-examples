@@ -69,7 +69,7 @@ people <- people %>%
 Create the graph
 
 ```{r}
-g <- graph_from_data_frame(bpl, directed = TRUE, vertices = people)
+g <- graph_from_data_frame(bpl, directed = TRUE, vertices = people) %>% as_tbl_graph()
 g
 ```
 
